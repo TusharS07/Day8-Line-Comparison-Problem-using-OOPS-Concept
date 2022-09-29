@@ -21,13 +21,8 @@ public class LineComparison {
         System.out.println();
 
     }
-    //display msg
-    static class DisplayMsg {
-        public static void displayMsg() {
-            System.out.println("Welcome to Line Comparison Computation Program ");
-        }
 
-    }
+
 
     //get cooordinator
 
@@ -81,6 +76,14 @@ public class LineComparison {
         public static int getLengthOfLine() {
             return (int) Math.sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2 );
         }
+    }
+
+    //display msg
+    static class DisplayMsg {
+        public static void displayMsg() {
+            System.out.println("Welcome to Line Comparison Computation Program ");
+        }
+
     }
 
 }

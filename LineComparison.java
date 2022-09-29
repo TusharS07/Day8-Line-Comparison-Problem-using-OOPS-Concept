@@ -58,6 +58,21 @@ public class LineComparison {
 
             }
             System.out.println();                                      //for empty space
+
+
+            //check equality of lines and compare botth lines
+            //use if else to check line are equals or not and greter or not
+
+           if (lineLengthArray[0] == lineLengthArray[1]) {
+                System.out.println("Line 1 and Line 2 both are Equal ");
+            }
+            else if (lineLengthArray[0] > lineLengthArray[1]) {
+                System.out.println("Line 1 is Grater than Line 2 ");
+            }
+            else {
+                System.out.println("Line 1 is Smaller then Line 2 ");
+            }
+
         }
     }
 

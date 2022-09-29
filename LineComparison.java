@@ -9,13 +9,18 @@ public class LineComparison {
     public static int y2;
 
     public static void main(String[] args) {
-
         DisplayMsg.displayMsg();                          //call display method and display welcome msg
 
         System.out.println(); //for empty space
 
-    }
 
+        Coordinates.getCoordinaters();                       //call method and get coordinator from user and display
+
+        //print also length of line for both line and
+        //and also show the equality and compare
+        System.out.println();
+
+    }
     //display msg
     static class DisplayMsg {
         public static void displayMsg() {
@@ -23,5 +28,44 @@ public class LineComparison {
         }
 
     }
-}
 
+    //get cooordinator
+
+    public static class Coordinates extends LineComparison {
+        public static void getCoordinaters() {
+            Scanner sc = new Scanner(System.in); //create Scannner class object
+            LengthOFLine lenLine = new LengthOFLine();
+            int[] lineLengthArray = new int[2];
+            for (int i = 1; i <= 2; i++) {
+                System.out.println("Enter the start Co-ordintes of Line " +i+ " (x1,y1) : ");
+                x1 = sc.nextInt();
+                y1 = sc.nextInt();
+                System.out.println("Enter the End Co-ordintes of Line " +i+ " (x2,y2) : ");
+                x2 = sc.nextInt();
+                y2 = sc.nextInt();
+                System.out.println("Start Coordintes of Line " +i+ " (x1,y1) :- " +x1+ " " +y1);
+                System.out.println("End Coordintes of Line " +i+ " (x2,y2) :- " +x2+ " " +y2);
+
+                System.out.println(); //for empty space
+
+
+                //first create objecct for lenghLine class --as we create in line no.8
+                //lenght of line values store in new local variable
+                int lineLength = lenLine.getLengthOfLine();
+                lineLengthArray[i - 1] = lineLength;                                //store the length values in array
+                System.out.println("Length of Line " +i+ " = " + lineLength);        //print the length of lines values of both 2 line
+
+
+            }
+            System.out.println();                                      //for empty space
+        }
+    }
+
+    //calculate Length of line
+    public static class LengthOFLine extends com.Bridgelabz.LineComparisonOOP.Coordinates {
+        public static int getLengthOfLine() {
+            return (int) Math.sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2 );
+        }
+    }
+
+}
